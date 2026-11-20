@@ -1,0 +1,14 @@
+{
+  "name": "tiny-spanish-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Tiny Spanish: a static, no-dependency Spanish-learning website featuring Emma and Mateo.",
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "dev": "node build.mjs && node scripts/serve.mjs",
+    "test": "node build.mjs && node --test tests/store.test.mjs tests/site.test.mjs"
+  },
+  "engines": { "node": ">=18" },
+  "license": "UNLICENSED"
+}
