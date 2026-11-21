@@ -73,3 +73,7 @@ Cloudflare: `wrangler.jsonc` is included (static assets from `dist/`). GitHub Pa
 
 - Add `public/assets/og.png` (1200×630 share image). The Open Graph tags point to it, but it is not committed yet.
 - Have a native speaker review the lessons (see *Content status*).
+
+## Optional home-page content
+- **Testimonials:** add real reviews to `data/testimonials.js` (`{ name, quote, stars }`). The carousel stays hidden while the list is empty.
+- **Social icons:** set `SOCIAL_INSTAGRAM`, `SOCIAL_YOUTUBE`, `SOCIAL_TIKTOK`, `SOCIAL_PINTEREST` (https URLs) at build time; icons appear in the footer only when set.

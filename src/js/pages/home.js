@@ -3,12 +3,11 @@ import { $, loadJSON, url, esc } from '../ui.js';
 export async function init(store) {
   const catalog = await loadJSON('catalog');
 
-  // Word of the day: same word all day, changes at local midnight.
-  const now = new Date(); const doy = Math.floor((now - new Date(now.getFullYear(), 0, 0)) / 86400000);
-  const [es, en, pron] = catalog.words[doy % catalog.words.length];
-  const box = $('[data-wotd]');
-  if (box) { box.innerHTML = `<span class="wotd-es" lang="es">${esc(es)}</span><span class="wotd-pron">${esc(pron)}</span><span class="wotd-en">${esc(en)}</span>`; }
-  const sp = $('[data-wotd-speak]'); if (sp) { sp.dataset.speak = es; sp.setAttribute('data-speak', es); }
+  // Testimonials carousel (only present when data/testimonials.js has entries).
+  const list = $('[data-tlist]');
+  document.querySelectorAll('[data-car]').forEach((btn) => btn.addEventListener('click', () => {
+    if (list) list.scrollBy({ left: Number(btn.dataset.car) * (list.firstElementChild?.offsetWidth || 300), behavior: 'smooth' });
+  }));
 
   // "Keep going" card for returning learners.
   const render = () => {

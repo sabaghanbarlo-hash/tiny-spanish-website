@@ -19,6 +19,7 @@ export function init(store) {
     count.textContent = `${shown} word${shown === 1 ? '' : 's'} shown · ${known} of ${cards.length} learned`; empty.hidden = shown > 0;
   };
   input.addEventListener('input', apply);
+  if (location.hash === '#search') input.focus();
   $('[data-chips="topic"]').addEventListener('click', (e) => { const b = e.target.closest('.chip'); if (!b) return; $$('.chip', e.currentTarget).forEach((x) => x.classList.toggle('is-on', x === b)); topic = b.dataset.value; apply(); });
   document.addEventListener('click', (e) => {
     const k = e.target.closest('.know'); if (!k) return; const card = k.closest('.word-card');
