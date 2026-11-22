@@ -25,7 +25,7 @@ const copyDir = (from, to) => {
 };
 
 // 1. Pages
-const pages = [P.home(), P.lessonsIndex(), P.coursesPage(), P.vocabularyPage(), P.grammarPage(), P.quizzesPage(), P.progressPage(),
+const pages = [P.home(), P.lessonsIndex(), P.coursesPage(), P.vocabularyPage(), P.grammarPage(), P.quizzesPage(), P.progressPage(), P.aboutPage(), P.blogPage(), P.contactPage(),
   ...lessons.map((l, i) => P.lessonPage(l, i))];
 for (const p of pages) write(p.path === '/' ? 'index.html' : `${p.path.replace(/^\//, '')}index.html`, page(p));
 const nf = P.notFound();
