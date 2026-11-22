@@ -354,3 +354,22 @@ body.hide-en [data-en], body.hide-pron [data-pron] { display: none; }
 .nf-char, .vp-chars .char-photo { max-width: 160px; }
 
 @media print { .site-header, .site-footer, .lesson-side, .speak, .toast-region { display: none !important; } body { background: #fff; } }
+
+
+/* ---------- Design-reference refinements: red pill nav, hero underline, one-row footer, simple pages ---------- */
+.site-header { border-bottom: 0; background: rgba(255, 246, 234, .94); }
+.site-nav a.active { background: var(--red); color: #fff; box-shadow: var(--shadow-sm); }
+.site-nav a.active::after { display: none; }
+.site-nav a.active:hover { background: var(--red-dark); color: #fff; }
+.search-btn { background: none; box-shadow: none; width: 38px; height: 38px; }
+.hero h1 span::after { display: block; content: ''; width: min(100%, 360px); height: 9px; border-radius: 9px; background: var(--gold); margin-top: .2rem; transform: rotate(-1.5deg); }
+.site-footer { border-top: 0; }
+.footer-inner { grid-template-columns: auto 1fr auto auto; gap: .8rem 1.6rem; }
+.footer-inner .social { grid-column: auto; justify-content: flex-end; }
+.social a { background: none; color: var(--ink); width: 34px; height: 34px; } .social a:hover { background: none; color: var(--red); }
+.footer-tag { grid-column: auto; text-align: right; font-size: 1.05rem; }
+.footer-explore { grid-column: 1 / -1; justify-content: center !important; } .footer-explore a { font-size: .92rem; font-weight: 700; color: var(--muted) !important; }
+.footer-note { text-align: center; }
+.simple-page { padding-block: 2.5rem 3rem; } .simple-card { max-width: 720px; margin-inline: auto; padding: 2rem; text-align: center; }
+.simple-card h1 { color: var(--ink); } .simple-duo { width: min(100%, 320px); height: auto; display: block; margin: 0 auto 1rem; }
+@media (max-width: 1020px) { .footer-inner { grid-template-columns: 1fr; justify-items: center; text-align: center; } .footer-inner .social { justify-content: center; } .footer-tag { text-align: center; } .site-footer nav { justify-content: center; } }
